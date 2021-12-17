@@ -14,31 +14,33 @@ Text regular: 'Saira Condensed', sans-serif; 400
 Text thin: 'Saira Condensed', sans-serif; 100
  */
 :root {
-   --primary-color: #495057;
-   --secondary-color: #fca311;
-   --background-color: #e5e5e5;
-   --header-color: #000;
-   --footer-color: #fff;
-   --link-color: #184a42;
-   --link-color-visited: #357b70;
-   --primary-font: 'Saira Condensed', sans-serif;
-   --font-weight-light: 100;
-   --font-weight-regular: 400;
-   --font-weight-semi-bold: 600;
-   --font-weight-bold: 900;
-   --font-size-h1: 40px;
-   --font-size-h1-small-screen: 22px;
-   --font-size-h2: 22px;
-   --font-size-h2-small-screen: 18px;
-   --font-size-body: 18px;
-   --font-size-body-small-screen: 12px;
-
- }
+  --primary-color: #495057;
+  --secondary-color: #fca311;
+  --background-color: #e5e5e5;
+  --header-color: #000;
+  --footer-color: #fff;
+  --link-color: #184a42;
+  --link-color-visited: #357b70;
+  --primary-font: 'Saira Condensed', sans-serif;
+  --font-weight-light: 100;
+  --font-weight-regular: 400;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 900;
+  --font-size-h1: 40px;
+  --font-size-h1-small-screen: 22px;
+  --font-size-h2: 22px;
+  --font-size-h2-small-screen: 18px;
+  --font-size-body: 18px;
+  --font-size-body-small-screen: 12px;
+}
 
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -47,11 +49,14 @@ body {
   font-family: var(--primary-font);
   font-weight: var(--font-weight-light);
   font-size: var(--font-size-body);
+
   /* Sets the font size to 16px */
   line-height: 1.6;
   color: var(--primary-color);
+
   /* Sets the line-height to 1.6 */
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -63,56 +68,58 @@ main {
   margin: 20px;
 }
 
-/* #### START OF Text styling #### */
+/* #### START OF Text  styling #### */
 h1 {
- font-weight: var(--font-weight-bold);
- font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-h1);
 }
 
 h2 {
- font-weight: var(--font-weight-semi-bold);
- font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-semi-bold);
+  font-size: var(--font-size-h2);
 }
 
 p {
- color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .p__italic {
- font-style: italic;
+  font-style: italic;
 }
 
 .p__highlight {
   color: var(--secondary-color);
   font-weight: var(--font-weight-regular);
 }
+
 /* #### END OF Text styling #### */
 
 /* #### START OF Link styling #### */
 
 a {
- color: var(--link-color);
+  color: var(--link-color);
 }
 
+/* visited link */
 a:visited {
- /* visited link */
- color: var(--link-color-visited);
+  color: var(--link-color-visited);
 }
 
-a:hover, a:focus {
- /* No underlining when hovering over a link, color orange */
- color: var(--secondary-color);
- text-decoration: none;
+/* No underlining when hovering over a link, color orange */
+a:hover,
+a:focus {
+  color: var(--secondary-color);
+  text-decoration: none;
 }
 
+/* selected link */
 a:active {
- /* selected link */
- color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 /* #### END OF Link styling #### */
 
- /* #### START OF Header styling #### */
+/* #### START OF Header styling #### */
 .page-header {
   display: flex;
   width: 100%;
@@ -130,8 +137,6 @@ a:active {
 }
 
 /* #### START OF Navigation styling #### */
-
-
 .navigation-list {
   list-style-type: none;
 }
@@ -146,8 +151,8 @@ a:active {
   color: #fff;
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-regular);
-  margin: 0px 10px;
-  padding: 10px 10px;
+  margin: 0 10px;
+  padding: 10px;
   position: relative;
   z-index: 0;
 }
@@ -157,45 +162,44 @@ a:active {
   color: var(--secondary-color);
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-regular);
-  margin: 0px 10px;
-  padding: 10px 10px;
+  margin: 0 10px;
+  padding: 10px;
   position: relative;
   z-index: 0;
 }
 
 /* Navigation Animation */
-.navigation-list li a:before, .navigation-list li a:after
-{
-    position: absolute;
-    left: 0px;
-    width: 100%;
-    height: 2px;
-    background: #FFF;
-    content: "";
-    opacity: 0;
-    transition: all 0.3s;
+.navigation-list li a::before,
+.navigation-list li a::after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  content: "";
+  opacity: 0;
+  transition: all 0.3s;
 }
 
-.navigation-list li a:before
-{
-    top: 0px;
-    transform: translateY(10px);
+.navigation-list li a::before {
+  top: 0;
+  transform: translateY(10px);
 }
 
-.navigation-list li a:after
-{
-    bottom: 0px;
-    transform: translateY(-10px);
+.navigation-list li a::after {
+  bottom: 0;
+  transform: translateY(-10px);
 }
 
-.navigation-list li a:hover:before, .navigation-list li a:hover:after
-{
-    opacity: 1;
-    transform: translateY(0px);
+.navigation-list li a:hover::before,
+.navigation-list li a:hover::after {
+  opacity: 1;
+  transform: translateY(0);
 }
 
- /* #### END OF Navigation styling #### */
- /* #### END OF Header styling #### */
+/* #### END OF Navigation styling #### */
+
+/* #### END OF Header styling #### */
 
 .profile {
   max-width: 700px;
@@ -225,7 +229,6 @@ a:active {
   min-height: 100vh;
 }
 
-
 .page-footer {
   clear: both;
   display: flex;
@@ -234,36 +237,42 @@ a:active {
   background-color: var(--footer-color);
 }
 
-
-
 /* #### START OF Button styling #### */
-button, .button {
+button,
+.button {
   /* overwrites browser defaults and resets the border */
   border: none;
   display: inline-block;
+
   /* takes the font from the outer container */
   font-family: inherit;
+
   /* styles the background color, font color, and text decoration (underline, etc.) of the button */
   background-color: var(--secondary-color);
   color: var(--link-color);
   font-weight: var(--font-weight-regular);
   text-decoration: none;
-  /*adds spacing to the button (this will be discussed more in-depth later) */
+
+  /* adds spacing to the button (this will be discussed more in-depth later) */
   padding: 10px;
   margin: 5px;
   border-radius: 3px;
+
   /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   transition: 0.2s opacity;
 }
 
-button:hover, button:focus, .button:hover, .button:focus {
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
   /* lets the mouse appear as a hand when hovering over the button */
   cursor: pointer;
+
   /* reduces the opacity of the button to 80% */
   opacity: 0.8;
 }
-
 
 a.button {
   color: var(--link-color);
@@ -275,9 +284,8 @@ a.button {
   color: white;
 }
 */
+
 /* #### END OF Button styling #### */
-
-
 
 /* #### START OF img styling #### */
 .page-header__logo {
@@ -306,13 +314,15 @@ a.button {
   max-width: 600px;
   height: auto;
 }
+
 /* #### END OF img styling #### */
 
 /* start grid fallback */
 .project-list__item {
- display: inline-block;
- width: 33%;
+  display: inline-block;
+  width: 33%;
 }
+
 /* end grid fallback */
 
 /* #### START OF Project List styling #### */
@@ -337,7 +347,7 @@ a.button {
 
 /* #### START OF Responsive Design styling #### */
 
-@media all and (max-width: 750px){
+@media all and (max-width: 750px) {
   /* shared code */
   .project-list {
     grid-gap: 10px;
@@ -355,27 +365,31 @@ a.button {
     font-size: var(--font-size-body-small-screen);
   }
 }
+
 @media all and (max-width: 500px) {
   .project-list {
     grid-template-columns: 1fr;
   }
 }
 
-@media all and (min-width: 500px) and (max-width: 750px){
+@media all and (min-width: 500px) and (max-width: 750px) {
   .project-list {
     grid-template-columns: 1fr 1fr;
   }
 }
+
 /* #### END OF Responsive Design styling #### */
 
 /* #### START OF Animation styling #### */
 @keyframes color-change {
   0% {
-  fill: #edc655;
+    fill: #edc655;
   }
+
   50% {
     fill: #fcffad;
   }
+
   100% {
     fill: #f76414;
   }
@@ -389,6 +403,7 @@ a.button {
   from {
     transform: translate(0, 50px);
   }
+
   to {
     transform: translate(200px, 50px);
   }
@@ -402,6 +417,7 @@ a.button {
   from {
     transform: translate(446px, 48px);
   }
+
   to {
     transform: translate(100px, 48px);
   }
