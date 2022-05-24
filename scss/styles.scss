@@ -342,10 +342,11 @@ a.button {
     width: auto;
     min-height: auto;
     margin: 0;
+    overflow: hidden;
   }
 
   .project-list__img {
-    max-width: fit-content;
+    max-width: 100%;
   }
 }
 
