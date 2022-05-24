@@ -398,6 +398,7 @@ a.button {
 
   .project-list__img {
     max-width: 100%;
+    max-height: 250px;
   }
 }
 
